@@ -1,5 +1,7 @@
 package com.example.kalidagger2mvvm.repository
 
+import android.content.ContentValues
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.kalidagger2mvvm.models.Product
@@ -15,6 +17,8 @@ class ProductRepository @Inject constructor(private val fakerApi: FakerApi) {
         val result = fakerApi.getProducts()
         if (result.isSuccessful && result.body() !=null){
             _products.postValue(result.body())
+        } else {
+            Log.e(ContentValues.TAG, "onFailure: ${result.message()}")
         }
     }
 }
