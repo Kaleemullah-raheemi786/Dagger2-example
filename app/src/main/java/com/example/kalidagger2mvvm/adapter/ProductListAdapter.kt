@@ -40,7 +40,7 @@ class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ListViewHolde
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(pokes: Product)
+        fun onItemClicked(product: Product)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {

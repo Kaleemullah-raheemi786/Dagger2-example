@@ -28,7 +28,6 @@ class ProductListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentDogsBreedListBinding.inflate(layoutInflater, container, false)
 
-
         return binding.root
     }
 }

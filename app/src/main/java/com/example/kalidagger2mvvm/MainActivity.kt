@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
 
       (application as FakerApplication).applicationComponent.inject(this)
 
-        mainViewModel = ViewModelProvider(this, mainViewModelFactory).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, mainViewModelFactory)[MainViewModel::class.java]
         binding.recycleView.adapter = adapter
 
-        mainViewModel.productLiveData.observe(this) { dogslist ->
-            setProducts(dogslist)
+        mainViewModel.productLiveData.observe(this) { productList ->
+            setProducts(productList)
         }
     }
 
